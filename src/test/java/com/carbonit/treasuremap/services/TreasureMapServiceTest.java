@@ -3,7 +3,7 @@ package com.carbonit.treasuremap.services;
 import com.carbonit.treasuremap.enums.BoxTypeEnum;
 import com.carbonit.treasuremap.enums.DirectionEnum;
 import com.carbonit.treasuremap.exceptions.NullBoxException;
-import com.carbonit.treasuremap.exceptions.UnknownLineFormat;
+import com.carbonit.treasuremap.exceptions.UnknownLineFormatException;
 import com.carbonit.treasuremap.models.Adventurer;
 import com.carbonit.treasuremap.models.Box;
 import com.carbonit.treasuremap.models.TreasureMap;
@@ -141,7 +141,7 @@ class TreasureMapServiceTest {
         Box[][] grid = new Box[5][5];
         this.treasureMap.setGrid(grid);
 
-        assertThrows(UnknownLineFormat.class,()->{treasureMapService.decodeLine(this.treasureMap, "Y - 3 - 3 - P");});
+        assertThrows(UnknownLineFormatException.class,()->{treasureMapService.decodeLine(this.treasureMap, "Y - 3 - 3 - P");});
     }
 
     @Test

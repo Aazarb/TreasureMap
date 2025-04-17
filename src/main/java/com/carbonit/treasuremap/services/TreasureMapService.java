@@ -3,7 +3,7 @@ package com.carbonit.treasuremap.services;
 import com.carbonit.treasuremap.enums.BoxTypeEnum;
 import com.carbonit.treasuremap.enums.DirectionEnum;
 import com.carbonit.treasuremap.exceptions.NullBoxException;
-import com.carbonit.treasuremap.exceptions.UnknownLineFormat;
+import com.carbonit.treasuremap.exceptions.UnknownLineFormatException;
 import com.carbonit.treasuremap.models.Adventurer;
 import com.carbonit.treasuremap.models.Box;
 import com.carbonit.treasuremap.models.TreasureMap;
@@ -68,7 +68,7 @@ public class TreasureMapService {
                 treasureMap.setAdventurer(adventurer);
                 break;
             default:
-                throw new UnknownLineFormat("Le format de ligne n'est pas reconnue");
+                throw new UnknownLineFormatException("Le format de ligne n'est pas reconnue");
         }
         return treasureMap;
     }

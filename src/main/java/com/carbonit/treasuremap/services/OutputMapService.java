@@ -54,7 +54,7 @@ public class OutputMapService {
             for (int j = 0; j < rows; j++) {  // Puis les lignes (qui deviennent colonnes)
                 stringBuilder.append(drawnMap[i][j]);
                 if (j < rows - 1) {
-                    stringBuilder.append(" ");
+                    stringBuilder.append("   ");
                 }
             }
             if (i < columns - 1) {

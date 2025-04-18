@@ -35,7 +35,7 @@ class OutputMapServiceTest {
 
     @Test
     void drawMap_with_plain_boxes_only() {
-        String expected = ". . . . .\n. . . . .\n. . . . .\n. . . . .\n. . . . .";
+        String expected = ".   .   .   .   .\n.   .   .   .   .\n.   .   .   .   .\n.   .   .   .   .\n.   .   .   .   .";
         assertEquals(expected,outputService.drawMap(this.treasureMap));
     }
 
@@ -43,7 +43,7 @@ class OutputMapServiceTest {
     void drawMap_with_plain_boxes_and_adventurer() {
         Adventurer adventurer = new Adventurer("Max",0, 0, DirectionEnum.S);
         this.treasureMap.setAdventurer(adventurer);
-        String expected = "A(Max) . . . .\n. . . . .\n. . . . .\n. . . . .\n. . . . .";
+        String expected = "A(Max)   .   .   .   .\n.   .   .   .   .\n.   .   .   .   .\n.   .   .   .   .\n.   .   .   .   .";
         assertEquals(expected,outputService.drawMap(this.treasureMap));
     }
 
@@ -57,7 +57,7 @@ class OutputMapServiceTest {
         this.treasureMap.setGrid(grid);
         this.treasureMap.setAdventurer(adventurer);
 
-        String expected = "A(Max) . . . .\n. . . . .\n. . . . .\n. . . . .\nT(3) . . . .";
+        String expected = "A(Max)   .   .   .   .\n.   .   .   .   .\n.   .   .   .   .\n.   .   .   .   .\nT(3)   .   .   .   .";
         assertEquals(expected,outputService.drawMap(this.treasureMap));
     }
 
@@ -71,7 +71,7 @@ class OutputMapServiceTest {
         this.treasureMap.setGrid(grid);
         this.treasureMap.setAdventurer(adventurer);
 
-        String expected = "A(Max) . . . .\n. . . . .\n. . M . .\n. . . . .\n. . . . .";
+        String expected = "A(Max)   .   .   .   .\n.   .   .   .   .\n.   .   M   .   .\n.   .   .   .   .\n.   .   .   .   .";
         assertEquals(expected,outputService.drawMap(this.treasureMap));
     }
 
@@ -87,7 +87,7 @@ class OutputMapServiceTest {
         this.treasureMap.setGrid(grid);
         this.treasureMap.setAdventurer(adventurer);
 
-        String expected = "A(Max) . . . .\n. . . . .\n. . . . .\n. . . . .\n. M T(2) . .";
+        String expected = "A(Max)   .   .   .   .\n.   .   .   .   .\n.   .   .   .   .\n.   .   .   .   .\n.   M   T(2)   .   .";
         assertEquals(expected,outputService.drawMap(this.treasureMap));
     }
 
